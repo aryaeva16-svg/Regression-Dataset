@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyMYQbrvpibGSt0+F9RGjzQp",
+      "authorship_tag": "ABX9TyNczzGc1jpP6EfKSPrmbt44",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -616,17 +616,18 @@
         "cluster_summary = data.groupby(\"Cluster\").mean(numeric_only=True)\n",
         "print(cluster_summary)\n",
         "\n",
-        "score = silhouette_score(X_scaled, clusters)\n",
-        "print(\"Silhouette Score:\", score)\n"
+        "score = silhouette_score(X_scaled, clusters, sample_size=2000)\n",
+        "print(\"Silhouette Score:\", score)\n",
+        "\n"
       ],
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
         "id": "JRHGRnccyGNR",
-        "outputId": "edce03ce-eb89-470c-f04c-4fb9daac0d16"
+        "outputId": "3646b4dd-bfb1-421b-93b0-cfb8ee556b59"
       },
-      "execution_count": null,
+      "execution_count": 16,
       "outputs": [
         {
           "output_type": "stream",
@@ -642,7 +643,8 @@
             "Cluster                                           \n",
             "0             104.480592                4.649002  \n",
             "1             104.475272                4.649126  \n",
-            "2             104.543197                4.650524  \n"
+            "2             104.543197                4.650524  \n",
+            "Silhouette Score: 0.06335347772533532\n"
           ]
         }
       ]
